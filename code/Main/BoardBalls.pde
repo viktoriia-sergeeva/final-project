@@ -1,7 +1,7 @@
 class BoardBalls{
   
   int spacing;
-  Ball[][] placement;
+  public Ball[][] placement;
   int ballSize = 10;
   int boarderThickness = 20;
   
@@ -41,6 +41,41 @@ class BoardBalls{
       if (placement.length % 2 == 0)
       n++;
     }
+    for (int i = 0; i < placement.length; i++)
+    {
+      for (int j = 0; j < placement[0].length; j++)
+      {
+        n = 0;
+        if((i >= 2 && j >= 1) && placement[i-2][j-1].Color == placement[i][j].Color)
+        {
+          placement[i][j].sameColorBalls[n] = placement[i-2][j-1];
+          n++;
+        }
+        
+        if(( j >= 1 && i < placement.length - 3) && placement[i+2][j-1].Color == placement[i][j].Color)
+        {
+          
+        }
+        
+        if((i >= 2 && j < placement[0].length - 2) && placement[i-2][j+1].Color == placement[i][j].Color)
+        {
+          
+        }
+        
+        if((i < placement.length - 3 && j < placement[0].length - 2 )&& placement[i+2][j+1].Color == placement[i][j].Color)
+        {
+          
+        }
+        
+      }
+      
+    }
+    
+  }
+  
+  public void popBall(Ball x){
+    x.isvoid = true;
+    
   }
   
   public void drawBoard(){

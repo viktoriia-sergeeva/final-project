@@ -1,8 +1,9 @@
 class Ball{
+  public Ball[] sameColorBalls = new Ball[100];
   int size = 20;
-  color Color;
-  int[] position;
-  boolean isvoid;
+  public color Color;
+  public int[] position;
+  public boolean isvoid;
   
   public Ball(int[] position,  boolean isball){
     int random = (int)(Math.random() * 4 + 1);
