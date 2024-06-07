@@ -25,7 +25,8 @@ public void setInterface(){
   fill(background);
   rect(0, 0, width, height);
   fill(boarder);
-  rect(boarderThickness, boarderThickness, width-(2*boarderThickness), height-(2*boarderThickness), 28);
+
+  
 }
   
 }
