@@ -46,25 +46,28 @@ class BoardBalls{
       for (int j = 0; j < placement[0].length; j++)
       {
         n = 0;
-        if((i >= 2 && j >= 1) && placement[i-2][j-1].Color == placement[i][j].Color)
+        if((i >= 1 && j >= 1) && placement[i-1][j-1].Color == placement[i][j].Color)
         {
-          placement[i][j].sameColorBalls[n] = placement[i-2][j-1];
+          placement[i][j].sameColorBalls[n] = placement[i-1][j-1];
           n++;
         }
         
-        if(( j >= 1 && i < placement.length - 3) && placement[i+2][j-1].Color == placement[i][j].Color)
+        if(( i >= 1 && j < placement[0].length - 2) && placement[i-1][j+1].Color == placement[i][j].Color)
         {
-          
+          placement[i][j].sameColorBalls[n] = placement[i-1][j+1];
+          n++;
         }
         
-        if((i >= 2 && j < placement[0].length - 2) && placement[i-2][j+1].Color == placement[i][j].Color)
+        if((j >= 1 && i < placement.length - 2) && placement[i+1][j-1].Color == placement[i][j].Color)
         {
-          
+          placement[i][j].sameColorBalls[n] = placement[i+1][j-1];
+          n++;
         }
         
-        if((i < placement.length - 3 && j < placement[0].length - 2 )&& placement[i+2][j+1].Color == placement[i][j].Color)
+        if((i < placement.length - 2 && j < placement[0].length - 2 )&& placement[i+1][j+1].Color == placement[i][j].Color)
         {
-          
+          placement[i][j].sameColorBalls[n] = placement[i+1][j+1];
+          n++;
         }
         
       }
@@ -75,6 +78,13 @@ class BoardBalls{
   
   public void popBall(Ball x){
     x.isvoid = true;
+    
+    
+    for (int i = 0; i < this.placement.length; i++)
+    {
+     if (x.sameColorBalls[i] != null)
+     x.sameColorBalls[i].isvoid = true;
+    }
     
   }
   
