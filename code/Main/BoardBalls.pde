@@ -54,17 +54,20 @@ class BoardBalls{
         
         if(( j >= 1 && i < placement.length - 3) && placement[i+2][j-1].Color == placement[i][j].Color)
         {
-          
+          placement[i][j].sameColorBalls[n] = placement[i+2][j-1];
+          n++;
         }
         
         if((i >= 2 && j < placement[0].length - 2) && placement[i-2][j+1].Color == placement[i][j].Color)
         {
-          
+          placement[i][j].sameColorBalls[n] = placement[i-2][j+1];
+          n++;
         }
         
         if((i < placement.length - 3 && j < placement[0].length - 2 )&& placement[i+2][j+1].Color == placement[i][j].Color)
         {
-          
+          placement[i][j].sameColorBalls[n] = placement[i+2][j+1];
+          n++;
         }
         
       }
@@ -75,12 +78,22 @@ class BoardBalls{
   
   public void popBall(Ball x){
     x.isvoid = true;
+    for (int z = 0; z < x.sameColorBalls.length; z++)
+    {
+      if (x.sameColorBalls[z] != null)
+      {
+       // popBall(x.sameColorBalls[z]);
+      }
+      
+      else
+      break;
+    }
     
   }
   
   public void drawBoard(){
-    int x = boarderThickness + 5;
-    int y = boarderThickness + 5;
+    //int x = boarderThickness + 5;
+    //int y = boarderThickness + 5;
     for (int i = 0; i < this.placement.length; i++)
     {
       for (int j = 0; j < this.placement[0].length; j++)

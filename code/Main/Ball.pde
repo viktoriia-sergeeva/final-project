@@ -4,6 +4,9 @@ class Ball{
   public color Color;
   public int[] position;
   public boolean isvoid;
+  public int[] coordinates;
+  public int[] boarders;
+  
   
   public Ball(int[] position,  boolean isball){
     int random = (int)(Math.random() * 4 + 1);
@@ -16,11 +19,27 @@ class Ball{
     isvoid = isball;
   }
   
+  public void setCoordinates(int spacing){
+    coordinates = new int[2];
+    boarders = new int[4];
+    
+    this.coordinates[0] = 40 + position[0] * spacing;
+    this.coordinates[1] =  40 + position[1] * spacing;
+    
+    boarders[0] = coordinates[0] - 20;
+    boarders[1] = coordinates[1] + 20;
+    boarders[2] = coordinates[2] - 20;
+    boarders[3] = coordinates[3] - 20;
+    
+    
+  }
+  
   public void drawBall(int spacing){
+    setCoordinates(spacing);
     if (!isvoid)
     {
     fill(this.Color);
-    circle(40 + position[0] * spacing, 40 + position[1] * spacing, size);
+    circle(coordinates[0], coordinates[1], size);
     }
   }
   

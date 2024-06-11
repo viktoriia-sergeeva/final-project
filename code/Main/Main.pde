@@ -51,8 +51,10 @@ void draw(){
     {
       for (int j = 0; j < One.placement[0].length; j++)
       {
-        if ((One.placement[i][j].position[0] >= accountForWidth(L.position[0])[0] &&  One.placement[i][j].position[0] <= accountForWidth(L.position[0])[1]) && ( (One.placement[i][j].position[1] >= accountForHeight(L.position[1])[0] &&   One.placement[i][j].position[1] <= accountForHeight(L.position[1])[1]  )) )
+        //if (((One.placement[i][j].position[0] * 15 + 40) >= accountForWidth(L.position[0])[0] * 15 + 40 &&  One.placement[i][j].position[0] * 15 + 40 <= accountForWidth(L.position[0])[1] * 15 + 40)  && ( (One.placement[i][j].position[1] * 15 + 40 >= accountForHeight(L.position[1])[0] * 15 + 40 &&   One.placement[i][j].position[1] * 15 + 40 <= accountForHeight(L.position[1])[1] * 15 + 40  )) )
+      if ( ( (One.placement[i][j].position[1] >= 0 &&   One.placement[i][j].position[1] < 350  )) )
         {
+     
           fff = false;
           One.popBall(One.placement[i][j]);
         }
