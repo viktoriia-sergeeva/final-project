@@ -29,27 +29,6 @@ public void setInterface(){
   
 }
 
-//public boolean ScanForEnd(BoardBalls One){
-//  boolean anyBallsLeft = false;;
-   
-//        for (int i = 0; i < One.placement.length; i++)
-//    {
-//      for (int j = 0; j < One.placement[0].length; j++)
-//      {
-//        if (One.placement[i][j].isvoid != true)
-//        {
-//          anyBallsLeft = true;
-//        }
-//      }
-      
-//    }
-//  if (!anyBallsLeft)
-//  {
-    
-//   loadImage("you_won.jpg");
-  
-//  }
-//  return anyBallsLeft;
-//}
+
   
 }

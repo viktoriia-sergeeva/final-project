@@ -22,20 +22,6 @@ class Trajectory{
  }
   
   
-  //public void getRidOfBalls(BoardBalls One){
-    
-  //  for (int i = 0; i < One.placement.length; i++)
-  //  {
-  //    for (int j = 0; j < One.placement[0].length; j++)
-  //    {
-  //      if (! ( i == 5 && j == 4) )
-  //      {
-  //        One.placement[i][j].isvoid = true;
-  //      }
-  //    }
-      
-  //  }
-  //}
   
   
   
