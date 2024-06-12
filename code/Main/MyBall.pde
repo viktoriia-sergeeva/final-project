@@ -1,6 +1,6 @@
 class MyBall{
   int[] position = new int[2];
-  color C;
+  public color C;
   
   public MyBall()
   {
@@ -16,12 +16,15 @@ class MyBall{
   
   public void drawBall()
   {
+    fill(C);
     circle(position[0], position[1], 20);
   }
   
   public void moveBall(int[] p)
   {
     int z = int(     (    float(p[1])    / float(p[0])) + .5);
+    if (z < 1)
+    z = 1;
     if (p[0] > position[0])
     this.position[0]++;
     else
